@@ -3,7 +3,7 @@
   <h2/> RefDrone: A Challenging Benchmark for Drone Scene Referring Expression Comprehension</h2>
 </p>
 
-<img width="50%" src="./fig/intro_fig7.pdf" />
+<img width="50%" src="./fig/intro.jpg" />
 
 ## TODO list
 - ✅ Release RefDrone test dataset
