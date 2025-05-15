@@ -163,7 +163,7 @@ train_dataloader = dict(
     dataset=dict(
         _delete_=True,
         type='ODVGDataset',
-        ann_file = 'datasets/RefDrone_train_vg.json',
+        ann_file = 'datasets/RefDrone_train_mdetr_vg.json',
         data_prefix=dict(img='datasets/VisDrone2019/all_image/'),
         filter_cfg=dict(filter_empty_gt=False),
         return_classes=True,
