@@ -8,7 +8,7 @@
 ## TODO list
 - ✅ Release RefDrone test dataset
 - ✅ Release RefDrone train/val dataset
-- ✅ Release RDAgent
+- ✅ Release RDAnnotator
 - ✅ Release NGDINO
 
 
