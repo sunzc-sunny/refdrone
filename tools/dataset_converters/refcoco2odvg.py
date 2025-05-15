@@ -37,17 +37,12 @@ def process_item(args, filename):
     out_results = []
     for img_id in tqdm(ids):
         if isinstance(img_id, str):
-            # ann_ids = coco.getAnnIds(imgIds=[img_id], iscrowd=0)
             ann_ids = coco.getAnnIds(imgIds=[img_id])
 
         else:
-            # ann_ids = coco.getAnnIds(imgIds=img_id, iscrowd=0)
             ann_ids = coco.getAnnIds(imgIds=img_id)
 
         annos = coco.loadAnns(ann_ids)
-        # if not has_valid_annotation(annos):
-        #     continue
-        # print(annos)
         img_info = coco.loadImgs(img_id)[0]
         file_name = img_info['file_name']
         caption = img_info['caption']
@@ -65,13 +60,7 @@ def process_item(args, filename):
                 print("!!!!1")
             inter_w = max(0, min(x1 + w, int(img_info['width'])) - max(x1, 0))
             inter_h = max(0, min(y1 + h, int(img_info['height'])) - max(y1, 0))
-            # if inter_w * inter_h == 0:
-            #     continue
-            # if anno['area'] <= 0 or w < 1 or h < 1:
-            #     continue
 
-            # if anno.get('iscrowd', False):
-            #     continue
             bbox_xyxy = [
                 x1, y1,
                 min(x1 + w, int(img_info['width'])),
@@ -146,12 +135,8 @@ def process_item(args, filename):
 
 def main():
     args = parse_args()
-    # process_item(args, 'finetune_refcoco_train.json')
-    # process_item(args, 'finetune_refcoco+_train.json')
-    # process_item(args, 'finetune_refcocog_train.json')
-    # process_item(args, 'finetune_grefcoco_train.json')
-    # process_item(args, 'finetune_RefDrone_train7.json')
-    process_item(args, 'finetune_grefcoco_train_zero.json')
+
+    process_item(args, 'RefDrone_train_mdetr.json')
 
 
 if __name__ == '__main__':
