@@ -53,8 +53,9 @@ refdrone
 ```
 
 Then use [refcoco2odvg.py](../../tools/dataset_converters/refcoco2odvg.py) to convert RefDrone_train_mdetr.json into the ODVG format required for training:
+```bash
 python tools/dataset_converters/refcoco2odvg.py datasets/VisDrone2019
-
+```
 ## Usage
 
 ### Train
