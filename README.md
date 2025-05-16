@@ -12,8 +12,11 @@
 - ✅ Release NGDINO
 
 
-## Dataset
+## RefDrone Dataset
 Please download RefDrone dataset from [Huggingface](https://huggingface.co/datasets/sunzc-sunny/RefDrone).
+
+## RDAnnotator
+The code of RDAnnotator is available on [GitHub](https://github.com/sunzc-sunny/RDAnnotator).
 
 ## Installation
 The recommended configuration is 4 A100 GPUs, with CUDA version 12.1. The other configurations in MMDetection should also work.
