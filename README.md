@@ -68,6 +68,7 @@ bash tools/dist_train.sh configs/NGDINO/ngdino_swin-t_refdrone.py   NUM_GPUs
 ```
 
 ### Inference
+Download the checkpoint from [Huggingface](https://huggingface.co/sunzc-sunny/ngdino).
 
 ```bash
 # single gpu
