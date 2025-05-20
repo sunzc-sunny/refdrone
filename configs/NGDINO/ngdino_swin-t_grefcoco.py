@@ -1,8 +1,8 @@
 _base_ = '../mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py'
 
 
-pretrained = 'swin_tiny_patch4_window7_224.pth'  # noqa
-lang_model_name = 'models--google-bert--bert-base-uncased'
+pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth'  # noqa
+lang_model_name = 'bert-base-uncased'
 
 model = dict(
     type='NumGroundingDINO',
