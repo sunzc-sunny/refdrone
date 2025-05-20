@@ -1,8 +1,8 @@
 _base_ = '../mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py'
 
 
-pretrained = 'swin_base_patch4_window12_384_22k.pth'  # noqa
-lang_model_name = 'models--google-bert--bert-base-uncased'
+load_from = 'https://download.openmmlab.com/mmdetection/v3.0/mm_grounding_dino/grounding_dino_swin-b_pretrain_obj365_goldg_v3det/grounding_dino_swin-b_pretrain_obj365_goldg_v3de-f83eef00.pth'  # noqa
+lang_model_name = 'bert-base-uncased'
 
 
 model = dict(
