@@ -59,6 +59,13 @@ python tools/dataset_converters/refcoco2odvg.py datasets/VisDrone2019
 ```
 ## Usage
 
+### Visualize
+Visualize the dataset with visualization saved to `work_dirs/vis_results/`.
+```bash
+python visualize.py 
+```
+
+
 ### Train
 ```bash
 # single gpu
