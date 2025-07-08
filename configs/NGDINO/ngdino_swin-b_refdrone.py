@@ -202,7 +202,17 @@ metrics = [
 
 val_dataloader = dict(
     dataset=dict(_delete_=True, type='ConcatDataset', datasets=datasets))
-test_dataloader = val_dataloader
+
+test_dataloader = dict(
+    dataset=dict(
+    type='MDETRStyleRefCocoDataset',
+    ann_file = 'datasets/RefDrone_test_mdetr.json',
+    data_prefix=dict(img='datasets/VisDrone2019/all_image/'),
+    test_mode=True,
+    return_classes=True,
+    pipeline=test_pipeline,
+    backend_args=None)
+)
 
 val_evaluator = dict(
     _delete_=True,
