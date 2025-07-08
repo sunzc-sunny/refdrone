@@ -86,6 +86,21 @@ python tools/test.py configs/NGDINO/ngdino_swin-t_refdrone.py  CHECKPOINT
 bash tools/dist_test.sh configs/NGDINO/ngdino_swin-t_refdrone.py  CHECKPOINT NUM_GPUs
 ```
 
+### Single image inference
+```bash
+python demo/image_demo.py \
+    all_image/0000189_00297_d_0000198.jpg \
+    configs/NGDINO/ngdino_swin-t_refdrone.py \
+    --weights NGDINO_T.pth \
+    --texts 'The white vans parked on the left side of the road.'
+```
+Parameter Description
+- First parameter: Input image path
+- Second parameter: Configuration file path  
+- `--weights`: Pre-trained model weight file
+- `--texts`: Text description for detection
+
+The inference results (including visualization images and detection results) will be saved in the `outputs/` directory.
 
 ## License
 
