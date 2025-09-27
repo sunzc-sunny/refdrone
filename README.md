@@ -93,6 +93,7 @@ python demo/image_demo.py \
     configs/NGDINO/ngdino_swin-t_refdrone.py \
     --weights NGDINO_T.pth \
     --texts 'The white vans parked on the left side of the road.'
+    --tokens-positive -1
 ```
 Parameter Description
 - First parameter: Input image path
