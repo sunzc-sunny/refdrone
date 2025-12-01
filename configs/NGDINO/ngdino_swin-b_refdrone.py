@@ -219,8 +219,17 @@ val_evaluator = dict(
     type='MultiDatasetsEvaluator',
     metrics=metrics,
     dataset_prefixes=dataset_prefixes)
-test_evaluator = val_evaluator
 
+test_dataloader = dict(
+    dataset=dict(
+    type='MDETRStyleRefCocoDataset',
+    ann_file = 'datasets/RefDrone_test_mdetr.json',
+    data_prefix=dict(img='datasets/VisDrone2019/all_image/'),
+    test_mode=True,
+    return_classes=True,
+    pipeline=test_pipeline,
+    backend_args=None)
+)
 optim_wrapper = dict(
     _delete_=True,
     type='OptimWrapper',
