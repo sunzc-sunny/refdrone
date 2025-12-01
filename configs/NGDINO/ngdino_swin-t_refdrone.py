@@ -216,7 +216,15 @@ val_evaluator = dict(
     type='MultiDatasetsEvaluator',
     metrics=metrics,
     dataset_prefixes=dataset_prefixes)
-test_evaluator = val_evaluator
+
+test_evaluator = dict(
+    _delete_=True,
+    type='RefDroneMetric',
+    ann_file='datasets/RefDrone_test_mdetr.json',
+    metric='bbox',
+    iou_thrs=0.5,
+    thresh_score=0.7,
+    thresh_f1=1.0)
 
 
 
