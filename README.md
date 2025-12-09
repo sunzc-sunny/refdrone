@@ -69,17 +69,21 @@ python visualize.py
 ### Train
 ```bash
 # single gpu
-python tools/train.py configs/NGDINO/ngdino_swin-t_refdrone.py 
+python tools/train.py configs/NGDINO/ngdino_swin-t_refdrone.py # 5 epoch
+
+python tools/train.py configs/NGDINO/ngdino_swin-t_refdrone_e50.py   # 50 epoch
 
 # multi gpu
-bash tools/dist_train.sh configs/NGDINO/ngdino_swin-t_refdrone.py   NUM_GPUs
+bash tools/dist_train.sh configs/NGDINO/ngdino_swin-t_refdrone.py   NUM_GPUs      # 5 epoch
+
+bash tools/dist_train.sh configs/NGDINO/ngdino_swin-t_refdrone_e50.py   NUM_GPUs  # 50 epoch
 ```
 
 ### Inference
 Download the checkpoint from [Huggingface](https://huggingface.co/sunzc-sunny/ngdino).
 
 ```bash
-# single gpu
+# single gpu 
 python tools/test.py configs/NGDINO/ngdino_swin-t_refdrone.py  CHECKPOINT
 
 # multi gpu
