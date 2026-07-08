@@ -1,7 +1,7 @@
 _base_ = '../mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py'
 
 
-checkpoint = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth'  # noqa
+pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth'  # noqa
 lang_model_name = 'bert-base-uncased'
 
 
