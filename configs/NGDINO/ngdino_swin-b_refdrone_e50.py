@@ -1,7 +1,7 @@
 _base_ = '../mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py'
 
 
-pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth'  # noqa
+checkpoint = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth'  # noqa
 lang_model_name = 'bert-base-uncased'
 
 
@@ -26,18 +26,21 @@ model = dict(
         special_tokens_list=['[CLS]', '[SEP]', '.', '?'],
         add_pooling_layer=False,
     ),
+    use_autocast=True,
     backbone=dict(
+        _delete_=True,
         type='SwinTransformer',
-        embed_dims=96,
-        depths=[2, 2, 6, 2],
-        num_heads=[3, 6, 12, 24],
-        window_size=7,
+        pretrain_img_size=384,
+        embed_dims=128,
+        depths=[2, 2, 18, 2],
+        num_heads=[4, 8, 16, 32],
+        window_size=12,
         mlp_ratio=4,
         qkv_bias=True,
         qk_scale=None,
         drop_rate=0.,
         attn_drop_rate=0.,
-        drop_path_rate=0.2,
+        drop_path_rate=0.3,
         patch_norm=True,
         out_indices=(1, 2, 3),
         with_cp=True,
@@ -46,7 +49,7 @@ model = dict(
         init_cfg=dict(type='Pretrained', checkpoint=pretrained)),
     neck=dict(
         type='ChannelMapper',
-        in_channels=[192, 384, 768],
+        in_channels=[256, 512, 1024],
         kernel_size=1,
         out_channels=256,
         act_cfg=None,
